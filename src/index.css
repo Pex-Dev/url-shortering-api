@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@theme {
+  --font-poppins: "Poppins";
+  --font-poppins-bold: "Poppins-bold";
+  --color-menu-mobile: #3a3053;
+  --color-button: #2bd1d1;
+  --color-button-hover: #9be3e2;
+}
