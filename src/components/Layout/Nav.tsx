@@ -1,11 +1,11 @@
 export default function Nav({ showMenu }: { showMenu: boolean }) {
   return (
-    <div
-      className={`transition-all relative w-full overflow-hidden ${
-        showMenu ? "h-0" : "h-[512px] md:h-auto"
-      }`}
-    >
-      <nav className="flex flex-col md:flex-row w-full absolute md:static md:justify-between bg-menu-mobile md:bg-transparent rounded-lg mt-5 md:mt-0 p-8 md:p-0 text-white font-poppins-bold">
+    <div className="relative">
+      <nav
+        className={`z-10 overflow-hidden transition-all flex flex-col md:flex-row w-full absolute md:static md:justify-between bg-menu-mobile md:bg-transparent rounded-lg mt-5 md:mt-0  text-white font-poppins-bold ${
+          showMenu ? "h-[360px] md:h-auto p-8 md:p-0" : "h-0 md:h-auto"
+        }`}
+      >
         <ul className="flex flex-col md:flex-row items-center gap-7">
           <li>
             <a href="#" className="hover:text-zinc-900 md:text-zinc-400">
