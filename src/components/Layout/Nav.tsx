@@ -1,7 +1,9 @@
 export default function Nav({ showMenu }: { showMenu: boolean }) {
   return (
     <div
-      className={`relative w-full ${showMenu ? "block" : "hidden md:block"}`}
+      className={`transition-all relative w-full overflow-hidden ${
+        showMenu ? "h-0" : "h-[512px] md:h-auto"
+      }`}
     >
       <nav className="flex flex-col md:flex-row w-full absolute md:static md:justify-between bg-menu-mobile md:bg-transparent rounded-lg mt-5 md:mt-0 p-8 md:p-0 text-white font-poppins-bold">
         <ul className="flex flex-col md:flex-row items-center gap-7">
