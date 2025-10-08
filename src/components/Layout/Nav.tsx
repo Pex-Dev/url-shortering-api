@@ -1,6 +1,6 @@
 export default function Nav({ showMenu }: { showMenu: boolean }) {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <nav
         className={`z-10 overflow-hidden transition-all flex flex-col md:flex-row w-full absolute md:static md:justify-between bg-menu-mobile md:bg-transparent rounded-lg mt-5 md:mt-0  text-white font-poppins-bold ${
           showMenu ? "h-[360px] md:h-auto p-8 md:p-0" : "h-0 md:h-auto"
