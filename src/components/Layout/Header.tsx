@@ -8,7 +8,7 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <header className="px-5 w-full  flex flex-col md:flex-row md:gap-12 md:items-center">
+    <header className="mx-auto max-w-[1120px] px-5 w-full  flex flex-col md:flex-row md:gap-12 md:items-center">
       <div className="flex w-full justify-between md:w-fit">
         <img
           src={logo}

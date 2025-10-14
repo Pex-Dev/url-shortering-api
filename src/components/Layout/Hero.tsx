@@ -2,7 +2,7 @@ import working from "../../images/illustration-working.svg";
 
 export default function Hero() {
   return (
-    <section className="mt-7 md:mt-15 flex flex-col md:flex-row-reverse md:items-center">
+    <section className="mx-auto max-w-[1120px] mt-7 md:mt-15 flex flex-col md:flex-row-reverse md:items-center">
       <div className="overflow-hidden md:overflow-visible">
         <img
           src={working}
@@ -22,7 +22,7 @@ export default function Hero() {
         <li className="w-full flex">
           <a
             href="#"
-            className="bg-button hover:bg-button-hover rounded-full w-full max-w-3xs mx-auto md:mx-0 font-poppins text-center md:text-left text-lg text-white py-4 md:py-3 md:px-8 md:max-w-48 mt-6"
+            className=" bg-button hover:bg-button-hover rounded-full w-full max-w-3xs mx-auto md:mx-0 font-poppins text-center text-lg text-white py-4 md:py-3 md:px-8 md:max-w-48 mt-6"
           >
             Get Started
           </a>
