@@ -40,7 +40,7 @@ export default function AdvancedStatistics() {
               <img src={iconDetailedrecords} alt="Icon detailed records" />
             </div>
             <h3 className="text-app-text-dark font-poppins-bold text-xl text-center lg:text-left">
-              Brand Recognition
+              Detailed Records
             </h3>
             <p className="md:text-sm lg:text-base font-poppins text-app-text text-center lg:text-left mt-7 lg:mt-5">
               Gain insights into who is clicking your links. Knowing when and
@@ -57,7 +57,7 @@ export default function AdvancedStatistics() {
               <img src={iconFullyCustomizable} alt="Icon fully customizable" />
             </div>
             <h3 className="text-app-text-dark font-poppins-bold text-xl text-center lg:text-left">
-              Brand Recognition
+              Fully Customizable
             </h3>
             <p className="md:text-sm lg:text-base font-poppins text-app-text text-center lg:text-left mt-7 lg:mt-5">
               Improve brand awareness and content discoverability through
