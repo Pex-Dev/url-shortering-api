@@ -12,7 +12,7 @@ export default function Hero() {
       </div>
 
       <div className="px-5 mt-6 md:mt-0">
-        <h1 className="font-poppins-bold text-center md:text-left text-app-text-dark text-[2.60rem] lg:text-6xl leading-13 lg:leading-18">
+        <h1 className="font-poppins-bold text-center md:text-left text-app-text-dark text-[2.60rem] lg:text-7xl leading-13 lg:leading-18">
           More than just shorten links
         </h1>
         <p className="text-app-text text-center md:text-left leading-7 font-poppins mt-4 lg:max-w-md">
