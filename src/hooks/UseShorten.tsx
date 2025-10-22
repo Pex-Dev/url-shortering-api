@@ -1,9 +1,25 @@
 import { useState } from "react";
 import type { ShortenURL } from "../types/types";
 
+const saveShortedURLs = (shortedUrls: ShortenURL[]) => {
+  //Save in localStorage
+  localStorage.setItem("shortedURLs", JSON.stringify(shortedUrls));
+};
+
+const loadShortedURls = (): ShortenURL[] => {
+  //Get shortedURLs from localStorage
+  const shortedURLs = localStorage.getItem("shortedURLs");
+  if (!shortedURLs) {
+    return [];
+  }
+  return JSON.parse(shortedURLs);
+};
+
 export default function UseShorten() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [shortedURLs, setShortedURLs] = useState<ShortenURL[]>([]);
+  const [shortedURLs, setShortedURLs] = useState<ShortenURL[]>(
+    loadShortedURls()
+  );
 
   const handleShorten = async (longURl: string): Promise<null | string> => {
     const url = "https://spoo.me/";
@@ -52,7 +68,24 @@ export default function UseShorten() {
         short_url: shortURL,
       },
     ]);
+    saveShortedURLs([
+      ...shortedURLs,
+      {
+        original_url: originalURL,
+        short_url: shortURL,
+      },
+    ]);
   };
 
-  return { loading, shortedURLs, handleShorten };
+  const deleteShortedURl = (shortedURL: ShortenURL) => {
+    setShortedURLs((sURLs) => {
+      const updatedSURLs: ShortenURL[] = sURLs.filter(
+        (sURL) => sURL.original_url !== shortedURL.original_url
+      );
+      saveShortedURLs(updatedSURLs);
+      return updatedSURLs;
+    });
+  };
+
+  return { loading, shortedURLs, handleShorten, deleteShortedURl };
 }
