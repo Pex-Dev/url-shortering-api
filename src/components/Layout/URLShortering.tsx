@@ -6,7 +6,8 @@ export default function URLShortering() {
   const [copiedURLs, setCopiedURLs] = useState<string[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const { loading, shortedURLs, handleShorten } = UseShorten();
+  const { loading, shortedURLs, handleShorten, deleteShortedURl } =
+    UseShorten();
 
   const urlId = useId();
 
@@ -89,31 +90,77 @@ export default function URLShortering() {
               key={index}
               className="bg-white rounded-lg font-poppins flex flex-col md:flex-row md:justify-between md:px-4 md:py-4 lg:px-6 lg:py-4"
             >
-              <div className="flex items-center border-b border-b-statistics md:border-b-0 overflow-hidden">
+              <div className="flex items-center justify-between border-b border-b-statistics md:border-b-0 overflow-hidden">
                 <p className="whitespace-nowrap overflow-hidden text-ellipsis p-3 md:p-0 text-app-text-dark">
                   {shortURL.original_url}
                 </p>
+                {/* Button delete */}
+                <button
+                  type="button"
+                  aria-label="Delete"
+                  onClick={() => deleteShortedURl(shortURL)}
+                  className="block md:hidden mr-2 text-button hover:text-shorten hover:cursor-pointer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
               <div className="flex flex-col md:items-center md:flex-row md:pl-5 gap-3 md:gap-5 p-3 md:p-0">
                 <a href={shortURL.short_url} className="text-button">
                   {shortURL.short_url}
                 </a>
-                {/* Copy Button */}
-                <button
-                  type="button"
-                  onClick={() => {
-                    copyToClipboard(shortURL.short_url);
-                  }}
-                  className={`hover:cursor-pointer transition-colors rounded-md min-w-[100px] py-2 text-white ${
-                    copiedURLs.some((cURL) => cURL === shortURL.short_url)
-                      ? "bg-shorten"
-                      : "bg-button hover:bg-button-hover"
-                  }`}
-                >
-                  {copiedURLs.some((cURL) => cURL === shortURL.short_url)
-                    ? "Copied!"
-                    : "Copy"}
-                </button>
+                <div className="flex w-full">
+                  {/* Copy Button */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      copyToClipboard(shortURL.short_url);
+                    }}
+                    className={`hover:cursor-pointer transition-colors rounded-md w-full min-w-[100px] py-2 text-white ${
+                      copiedURLs.some((cURL) => cURL === shortURL.short_url)
+                        ? "bg-shorten"
+                        : "bg-button hover:bg-button-hover"
+                    }`}
+                  >
+                    {copiedURLs.some((cURL) => cURL === shortURL.short_url)
+                      ? "Copied!"
+                      : "Copy"}
+                  </button>
+                  {/* Delete button */}
+                  <button
+                    type="button"
+                    aria-label="Delete"
+                    onClick={() => deleteShortedURl(shortURL)}
+                    className="hidden md:block ml-2 text-button hover:text-shorten hover:cursor-pointer"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M18 6l-12 12" />
+                      <path d="M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </li>
           ))}
