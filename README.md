@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/url-shortering-api-solution-1BjqlHcr6J)
-- Live Site URL: [Add live site URL here](https://url-shortering-pex-dev.netlify.app/)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/url-shortering-api-solution-1BjqlHcr6J)
+- Live Site URL: [Live Site](https://url-shortering-pex-dev.netlify.app/)
 
 ## My process
 
