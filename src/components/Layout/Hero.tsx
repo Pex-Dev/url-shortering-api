@@ -19,14 +19,14 @@ export default function Hero() {
           Build tour brand's recognition and get detailed insights on how your
           links are performing.
         </p>
-        <li className="w-full flex">
+        <div className="w-full flex">
           <a
             href="#"
-            className=" bg-button hover:bg-button-hover rounded-full w-full max-w-3xs mx-auto md:mx-0 font-poppins text-center text-lg text-white py-4 md:py-3 md:px-8 md:max-w-48 mt-6"
+            className="bg-button hover:bg-button-hover rounded-full w-full max-w-3xs mx-auto md:mx-0 font-poppins text-center text-lg text-white py-4 md:py-3 md:px-8 md:max-w-48 mt-6"
           >
             Get Started
           </a>
-        </li>
+        </div>
       </div>
     </section>
   );
