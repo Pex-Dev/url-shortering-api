@@ -41,6 +41,7 @@ export default function UseShorten() {
       const data = await response.json();
 
       if (!response.ok) {
+        setLoading(false);
         return `${data.UrlError}`;
       }
 
